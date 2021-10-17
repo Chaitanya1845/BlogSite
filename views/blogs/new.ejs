@@ -1,0 +1,36 @@
+<%layout('layouts/boilerplate') %>
+<div class="row ">
+    <h1 class="text-center card-title mb-3">New Blog </h1>
+    <div class="col-md-6 offset-md-3">
+        <div class="card mb-3 shadow-lg rounded-3">
+            <div class="card-body">
+                <form action="/blogs" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label" for="title">Title</label>
+                        <input class="form-control" type="text" id="title" name="blog[title]" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="body">Content</label>
+                        <textarea class="form-control" name="blog[body]" id="body" cols="30" rows="5"
+                            required></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3"> <input type="file" name="image" id="image" multiple> </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3 d-grid gap-2">
+                            <button class="btn btn-outline-success">Submit</button>
+                        </div>
+                        <div class="col-md-6 mb-3 d-grid gap-2">
+                            <a href="/blogs" class="btn btn-outline-primary">All Blog</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
