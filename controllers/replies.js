@@ -15,7 +15,7 @@ module.exports.createReply = async (req, res) => {
 
 module.exports.deleteReply = async (req, res) => {
     const { id, commentId, replyId } = req.params;
-    await Comment.findByIdAndUpdate(commentId, { $pull: { replies: replyId } });
+    await Comment.findByIdAndUpdate(commentId, { $pull: { replies: replyId } }, { timestamps: { createdAt: true, updatedAt: false } });
     await Reply.findByIdAndDelete(replyId);
 
     req.flash('success', 'Succesfully deleted reply!');
