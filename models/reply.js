@@ -26,7 +26,7 @@ ReplySchema.virtual('date').get(function () {
     }
     else if (z >= 60 * 60 * 24) {
         z = parseInt(z / (60 * 60 * 24));
-        s = " No. of Days Ago"
+        s = " of Days Ago"
     }
     else if (z >= 60 * 60) {
         z = parseInt(z / (60 * 60));

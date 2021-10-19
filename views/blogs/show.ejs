@@ -139,7 +139,7 @@
                 <div class="py-3">
                     <div class="row border-bottom pb-3">
                         <div class="col text-start">
-                            <p class="card-center fs-4"><a href="/<%=blog.author._id%>/profile"
+                            <p class="card-center fs-4"><a href="/<%=comment.author._id%>/profile"
                                     class=" card-link text-decoration-none text-primary"><%= comment.author.username %></a>
                             </p>
                         </div>
@@ -203,7 +203,10 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col text-start">
-                                    <p class="card-text"><b><%= reply.author.username %></b></p>
+                                    <p class="card-text">
+                                        <a href="/<%=reply.author._id%>/profile"
+                                            class=" card-link text-decoration-none text-primary"><%= reply.author.username %></a>
+                                    </p>
                                 </div>
                                 <div class="col text-end">
                                     <span class="text-dark "> <%=reply.date%>
