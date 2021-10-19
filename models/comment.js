@@ -24,15 +24,15 @@ CommentSchema.virtual('date').get(function () {
     let s = "";
     if (z >= 60 * 60 * 24 * 30 * 12) {
         z = parseInt(z / (60 * 60 * 24 * 30 * 12));
-        s = "Year Ago"
+        s = " Year Ago"
     }
     else if (z >= 60 * 60 * 24 * 30) {
         z = parseInt(z / (60 * 60 * 24 * 30));
-        s = "Month Ago"
+        s = " Month Ago"
     }
     else if (z >= 60 * 60 * 24) {
         z = parseInt(z / (60 * 60 * 24));
-        s = "Days Ago"
+        s = " Days Ago"
     }
     else if (z >= 60 * 60) {
         z = parseInt(z / (60 * 60));
