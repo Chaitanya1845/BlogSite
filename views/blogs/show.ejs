@@ -147,16 +147,18 @@
                             <span class="text-dark "><small> <%=comment.date%></small>
                             </span>
                         </div>
+
+                        <% if(currentUser && comment.author._id.equals(currentUser._id)){ %>
                         <div class="col text-center">
-                            <% if(currentUser && comment.author._id.equals(currentUser._id)){ %>
                             <form class="d-inline"
                                 action="/blogs/<%=blog._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
                                 <button class="btn btn-outline-dark btn-sm">
                                     delete
                                 </button>
                             </form>
-                            <% } %>
                         </div>
+
+                        <% } %>
                         <div class="col text-center">
                             <a id="reply-a" class="text-decoration-none" data-bs-toggle="collapse"
                                 href="#collapseReplies<%=comment._id%>" aria-expanded="false"
