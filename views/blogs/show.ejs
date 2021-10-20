@@ -7,8 +7,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col text-start">
-                        <h3 class="text-muted">Author-:
-                            <a href="/<%=blog.author._id%>/profile"
+                        <h3 class="text-muted"><a href="/<%=blog.author._id%>/profile"
                                 class=" card-link text-decoration-none text-primary">
                                 <%=blog.author.username%>
                             </a>
@@ -144,21 +143,9 @@
                             </p>
                         </div>
                         <div class="col text-end">
-                            <span class="text-dark "><small> <%=comment.date%></small>
-                            </span>
+                            <span class="text-dark "><%=comment.date%></span>
                         </div>
 
-                        <% if(currentUser && comment.author._id.equals(currentUser._id)){ %>
-                        <div class="col text-center">
-                            <form class="d-inline"
-                                action="/blogs/<%=blog._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
-                                <button class="btn btn-outline-dark btn-sm">
-                                    delete
-                                </button>
-                            </form>
-                        </div>
-
-                        <% } %>
                         <div class="col text-center">
                             <a id="reply-a" class="text-decoration-none" data-bs-toggle="collapse"
                                 href="#collapseReplies<%=comment._id%>" aria-expanded="false"
@@ -176,6 +163,17 @@
 
                         </div>
 
+                        <% if(currentUser && comment.author._id.equals(currentUser._id)){ %>
+                        <div class="col text-start">
+                            <form class="d-inline"
+                                action="/blogs/<%=blog._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                <button class="btn btn-outline-dark btn-sm">
+                                    delete
+                                </button>
+                            </form>
+                        </div>
+
+                        <% } %>
 
                     </div>
                     <p class="card-text mt-3"><%=comment.text%></p>
