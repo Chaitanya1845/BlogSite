@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Comment = require('./comment')
 const Reply = require('./reply');
+const User = require('./user');
 const { cloudinary } = require('../cloudinary');
 
 const ImageSchema = new Schema({
